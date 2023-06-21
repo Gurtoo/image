@@ -109,25 +109,25 @@ export default class ImageTool {
         name: 'stretched',
         icon: IconStretch,
         title: 'Stretch image',
-        toggle: true,
+        // toggle: true,
       },
       {
         name: 'big',
         icon: IconStretch,
         title: 'Большой размер',
-        toggle: true,
+        // toggle: true,
       },
       {
         name: 'medium',
         icon: IconStretch,
         title: 'Средний размер',
-        toggle: true,
+        // toggle: true,
       },
       {
         name: 'small',
         icon: IconStretch,
         title: 'Маленький размер',
-        toggle: true,
+        // toggle: true,
       },
       {
         name: 'withBorder',
@@ -415,6 +415,7 @@ export default class ImageTool {
     if (response.success && response.file) {
       this.image = response.file;
     } else {
+      console.log(response, 3);
       this.uploadingFailed('incorrect response: ' + JSON.stringify(response));
     }
   }
@@ -462,7 +463,6 @@ export default class ImageTool {
     this.ui.applyTune(tuneName, value);
 
     if (tuneName === 'stretched') {
-      console.log(this.api.blocks, 2);
       /**
        * Wait until the API is ready
        */
