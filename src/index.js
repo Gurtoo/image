@@ -106,15 +106,33 @@ export default class ImageTool {
   static get tunes() {
     return [
       {
-        name: 'withBorder',
-        icon: IconAddBorder,
-        title: 'With border',
-        toggle: true,
-      },
-      {
         name: 'stretched',
         icon: IconStretch,
         title: 'Stretch image',
+        toggle: true,
+      },
+      {
+        name: 'big',
+        icon: IconStretch,
+        title: 'Большой размер',
+        toggle: true,
+      },
+      {
+        name: 'medium',
+        icon: IconStretch,
+        title: 'Средний размер',
+        toggle: true,
+      },
+      {
+        name: 'small',
+        icon: IconStretch,
+        title: 'Маленький размер',
+        toggle: true,
+      },
+      {
+        name: 'withBorder',
+        icon: IconAddBorder,
+        title: 'With border',
         toggle: true,
       },
       {
@@ -444,6 +462,7 @@ export default class ImageTool {
     this.ui.applyTune(tuneName, value);
 
     if (tuneName === 'stretched') {
+      console.log(this.api.blocks, 2);
       /**
        * Wait until the API is ready
        */

@@ -86,7 +86,7 @@
       margin: 0 6px 0 0;
     }
   }
-  
+
   &--filled {
     .cdx-button {
       display: none;
@@ -143,6 +143,30 @@
     ^&__image {
       &-picture {
         width: 100%;
+      }
+    }
+  }
+
+  &--big {
+    ^&__image {
+      &-picture {
+        width: 75%;
+      }
+    }
+  }
+
+  &--medium {
+    ^&__image {
+      &-picture {
+        width: 50%;
+      }
+    }
+  }
+
+  &--small {
+    ^&__image {
+      &-picture {
+        width: 25%;
       }
     }
   }
