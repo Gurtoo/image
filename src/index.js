@@ -260,7 +260,7 @@ export default class ImageTool {
       onActivate: () => {
         /* If it'a user defined tune, execute it's callback stored in action property */
         // eslint-disable-next-line no-return-assign
-        tunes.map((i) => {
+        tunes.forEach((i) => {
           return {
             ...i,
             isActive: false,
