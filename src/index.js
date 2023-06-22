@@ -373,6 +373,8 @@ export default class ImageTool {
     ImageTool.tunes.forEach(({ name: tune }) => {
       const value = typeof data[tune] !== 'undefined' ? data[tune] === true || data[tune] === 'true' : false;
 
+      console.log(data, tune, data[tune], 9);
+
       this.setTune(tune, value);
     });
   }
@@ -415,8 +417,7 @@ export default class ImageTool {
     if (response.success && response.file) {
       this.image = response.file;
     } else {
-      console.log(response, 3);
-      this.uploadingFailed('incorrect response: ' + JSON.stringify(response));
+      this.uploadingFailed(JSON.stringify(response));
     }
   }
 
@@ -431,7 +432,7 @@ export default class ImageTool {
     console.log('Image Tool: uploading failed because of', errorText);
 
     this.api.notifier.show({
-      message: this.api.i18n.t('Couldn’t upload image. Please try another.'),
+      message: errorText || this.api.i18n.t('Couldn’t upload image. Please try another.'),
       style: 'error',
     });
     this.ui.hidePreloader();
