@@ -259,6 +259,9 @@ export default class ImageTool {
       isActive: this.data[tune.name],
       onActivate: () => {
         /* If it'a user defined tune, execute it's callback stored in action property */
+
+        console.log(tune, tune.action, 7);
+
         if (typeof tune.action === 'function') {
           tune.action(tune.name);
 
@@ -373,8 +376,6 @@ export default class ImageTool {
     ImageTool.tunes.forEach(({ name: tune }) => {
       const value = typeof data[tune] !== 'undefined' ? data[tune] === true || data[tune] === 'true' : false;
 
-      console.log(data, tune, data[tune], 9);
-
       this.setTune(tune, value);
     });
   }
@@ -447,6 +448,8 @@ export default class ImageTool {
    * @returns {void}
    */
   tuneToggled(tuneName) {
+
+    console.log(tuneName, 8);
     // inverse tune state
     this.setTune(tuneName, !this._data[tuneName]);
   }
@@ -460,6 +463,8 @@ export default class ImageTool {
    */
   setTune(tuneName, value) {
     this._data[tuneName] = value;
+
+    console.log(tuneName, value, 9);
 
     this.ui.applyTune(tuneName, value);
 
