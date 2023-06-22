@@ -260,15 +260,6 @@ export default class ImageTool {
       onActivate: () => {
         /* If it'a user defined tune, execute it's callback stored in action property */
         // eslint-disable-next-line no-return-assign
-        tunes.forEach((i) => {
-          return {
-            ...i,
-            isActive: false,
-            toggle: false,
-          };
-        });
-
-        console.log(tune, tune.action, 7);
 
         if (typeof tune.action === 'function') {
           tune.action(tune.name);
@@ -456,7 +447,6 @@ export default class ImageTool {
    * @returns {void}
    */
   tuneToggled(tuneName) {
-    console.log(tuneName, 8);
     // inverse tune state
     this.setTune(tuneName, !this._data[tuneName]);
   }
@@ -470,8 +460,6 @@ export default class ImageTool {
    */
   setTune(tuneName, value) {
     this._data[tuneName] = value;
-
-    console.log(tuneName, value, 9);
 
     this.ui.applyTune(tuneName, value);
 
