@@ -109,25 +109,25 @@ export default class ImageTool {
         name: 'stretched',
         icon: IconStretch,
         title: 'Stretch image',
-        // toggle: true,
+        toggle: true,
       },
       {
         name: 'big',
         icon: IconStretch,
         title: 'Большой размер',
-        // toggle: true,
+        toggle: true,
       },
       {
         name: 'medium',
         icon: IconStretch,
         title: 'Средний размер',
-        // toggle: true,
+        toggle: true,
       },
       {
         name: 'small',
         icon: IconStretch,
         title: 'Маленький размер',
-        // toggle: true,
+        toggle: true,
       },
       {
         name: 'withBorder',
@@ -260,7 +260,7 @@ export default class ImageTool {
       onActivate: () => {
         /* If it'a user defined tune, execute it's callback stored in action property */
         // eslint-disable-next-line no-return-assign
-        tunes.map((i) => i.toggle = false);
+        tunes.map((i) => i.isActive = false);
 
         console.log(tune, tune.action, 7);
 
